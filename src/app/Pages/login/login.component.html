@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="loginForm">
+      <div class="form-group"><label for="login-email" class="form-label">Email</label>
+        <input type="text" id="email" placeholder="john@example.com" formControlName="emailID"
+          aria-describedby="login-email" [ngClass]="{ 'is-invalid': hasFieldError(f['emailID'])}" tabindex="1"
+          autofocus="" class="form-control">
+
+        <div *ngIf="hasFieldError(f['emailID'])" class="invalid-feedback">
+          <div *ngIf="f['emailID'].errors!['required']">This fild is required</div>
+          <div *ngIf="f['emailID'].errors!['email']">This fild is required</div>
+        </div>
+
+
+      </div>
+      <div>
+        {{emailValue}}
+
+      </div>
+
+      <div class="form-group">
+        <div class="d-flex justify-content-between"><label for="login-password">Password</label>
+        </div>
+        <div class="input-group input-group-merge form-password-toggle">
+          <input tabindex="2" placeholder="·········" formControlName="password"
+            [ngClass]="{ 'is-invalid': hasFieldError(f['password'])}" class="form-control" type="password">
+
+          <div *ngIf="hasFieldError(f['password'])" class="invalid-feedback">
+            <div *ngIf="f['password'].errors!['required']">This fild is required</div>
+          </div>
+
+        </div>
+
+        <!---->
+      </div>
+
+      <button type="button" tabindex="4" rippleeffect="" (click)="onSubmitEvent('login')"
+        class="btn btn-primary btn-block waves-effect waves-float waves-light">Sign in</button>
+    </form>
+
+    <!-- <button type="button" tabindex="4" rippleeffect="" (click)="onSubmitEvent('reset')"
+      class="btn btn-primary btn-block waves-effect waves-float waves-light">reset</button> -->
+
+  </div>
+</div>
