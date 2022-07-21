@@ -9,12 +9,15 @@ import { EmployeeLoginComponent } from './Pages/employee-login/employee-login.co
 import { PageNotFoundComponent } from './Pages/page-not-found/page-not-found.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgDirectiveComponent } from './Pages/ng-directive/ng-directive.component';
 
 
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
   { path: "login", component: LoginComponent },
+  { path: "ng-directive", component: NgDirectiveComponent },
+  
   { path: "employe-login", component: EmployeeLoginComponent },
   { path: "page-not-found", component: PageNotFoundComponent },
   { path: "**", component: PageNotFoundComponent }
@@ -28,7 +31,8 @@ const routes: Routes = [
     HeaderComponent,
     FooterComponent,
     EmployeeLoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    NgDirectiveComponent
   ],
   imports: [
     BrowserModule,
