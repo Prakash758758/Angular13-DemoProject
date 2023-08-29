@@ -1,0 +1,8 @@
+
+<button mat-button color="primary" (click)="caseNoEvent('123')">CaseNo:123</button>
+    <button mat-button color="accent"(click)="caseNoEvent('456')">CaseNo:456</button>
+<app-mat-custom-table *ngIf="tableRefresh"
+ (action)="onTableAction($event)"
+  [dataset]="data" 
+  [columns]="columns">
+</app-mat-custom-table>
